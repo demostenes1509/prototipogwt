@@ -1,0 +1,27 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+	<g:HTMLPanel>
+		<div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;">
+			<div style="position: absolute; overflow: hidden; left: 0px; top: 0px; right: 0px; bottom: 0px;">
+				<div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;">
+					<div style="position: absolute; overflow: hidden; left: 0em; top: 0em; right: 0em; height: 2em;">
+						<div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;" ui:field="northDiv">Base North</div>
+					</div>
+					<div style="position: absolute; overflow: hidden; left: 0em; right: 0em; bottom: 0em; height: 2em;">
+						<div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;" ui:field="southDiv">Base South</div>
+					</div>
+					<div style="position: absolute; overflow: hidden; top: 2em; right: 0em; bottom: 2em; width: 2em;">
+						<div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;" ui:field="eastDiv">Base East</div>
+					</div>
+					<div style="position: absolute; overflow: hidden; left: 0em; top: 2em; bottom: 2em; width: 2em;">
+						<div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;" ui:field="westDiv">Base West</div>
+					</div>
+					<div style="position: absolute; overflow: hidden; left: 2em; top: 2em; right: 2em; bottom: 2em;">
+						<div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px;" ui:field="centerDiv">Base Center</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>		
+</ui:UiBinder>

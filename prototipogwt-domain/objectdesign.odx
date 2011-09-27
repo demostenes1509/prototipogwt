@@ -1,0 +1,669 @@
+<project>
+  <packages>
+    <javaPackage name="com.teracode.prototipogwt.domain.domainmodel">
+      <projectName>prototipogwt-domain</projectName>
+      <path>src/main/java/com/teracode/prototipogwt/domain/domainmodel</path>
+      <classes>
+        <classifier name="User">
+          <superclass class="com.teracode.prototipogwt.domain.domainmodel.EntityBase"/>
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <tags>
+            <tag name="@javax.xml.bind.annotation.XmlRootElement"/>
+          </tags>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>1065016204</value>
+            </variable>
+            <variable name="role">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.Role"/>
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.Role" name="user"/>
+            </variable>
+            <variable name="email">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="password">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="userSession">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.UserSession"/>
+              <multiplicity>*</multiplicity>
+              <access>1</access>
+              <value>new com.teracode.prototipogwt.domain.domainmodel.UserSession()</value>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.UserSession" name="user"/>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>User</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>User.java</name>
+            <compilationUnitId>=prototipogwt-domain/src\/main\/java&lt;com.teracode.prototipogwt.domain.domainmodel{User.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="Role">
+          <superclass class="com.teracode.prototipogwt.domain.domainmodel.EntityBase"/>
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <tags>
+            <tag name="@javax.xml.bind.annotation.XmlRootElement"/>
+          </tags>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>1064923191</value>
+            </variable>
+            <variable name="user">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.User"/>
+              <multiplicity>*</multiplicity>
+              <access>1</access>
+              <value>new com.teracode.prototipogwt.domain.domainmodel.User()</value>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.User" name="role"/>
+              <tags>
+                <tag name="@javax.xml.bind.annotation.XmlTransient"/>
+              </tags>
+            </variable>
+            <variable name="rolePermission">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.RolePermission"/>
+              <multiplicity>*</multiplicity>
+              <access>1</access>
+              <value>new com.teracode.prototipogwt.domain.domainmodel.RolePermission()</value>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.RolePermission" name="role"/>
+            </variable>
+            <variable name="name">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>Role</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>Role.java</name>
+            <compilationUnitId>=prototipogwt-domain/src\/main\/java&lt;com.teracode.prototipogwt.domain.domainmodel{Role.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="UserSession">
+          <superclass class="com.teracode.prototipogwt.domain.domainmodel.EntityBase"/>
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <tags>
+            <tag name="@javax.xml.bind.annotation.XmlRootElement"/>
+          </tags>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>-1923716758</value>
+            </variable>
+            <variable name="user">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.User"/>
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.User" name="userSession"/>
+            </variable>
+            <variable name="device">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="token">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>UserSession</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>UserSession.java</name>
+            <compilationUnitId>=prototipogwt-domain/src\/main\/java&lt;com.teracode.prototipogwt.domain.domainmodel{UserSession.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="EntityBase">
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <tags>
+            <tag name="@MappedSuperclass"/>
+            <tag name="@javax.xml.bind.annotation.XmlRootElement"/>
+            <tag name="@javax.xml.bind.annotation.XmlAccessorType">
+              <parameters>
+                <value>javax.xml.bind.annotation.XmlAccessType.FIELD</value>
+              </parameters>
+            </tag>
+          </tags>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>-75886507</value>
+            </variable>
+            <variable name="id">
+              <type>Long</type>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <stereotype>id</stereotype>
+              <tags>
+                <tag name="@Id"/>
+                <tag name="@GeneratedValue">
+                  <parameters>
+                    <generator>generator</generator>
+                  </parameters>
+                </tag>
+              </tags>
+            </variable>
+            <variable name="active">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <value>&quot;S&quot;</value>
+              <tags>
+                <tag name="@Column">
+                  <parameters>
+                    <length>1</length>
+                    <nullable>false</nullable>
+                  </parameters>
+                </tag>
+              </tags>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>EntityBase</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>EntityBase.java</name>
+            <compilationUnitId>=prototipogwt-domain/src\/main\/java&lt;com.teracode.prototipogwt.domain.domainmodel{EntityBase.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="Permission">
+          <superclass class="com.teracode.prototipogwt.domain.domainmodel.EntityBase"/>
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>890052816</value>
+            </variable>
+            <variable name="rolePermission">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.RolePermission"/>
+              <multiplicity>*</multiplicity>
+              <access>1</access>
+              <value>new com.teracode.prototipogwt.domain.domainmodel.RolePermission()</value>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.RolePermission" name="permission"/>
+            </variable>
+            <variable name="clazz">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="method">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>Permission</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>Permission.java</name>
+            <compilationUnitId>=prototipogwt-domain/src\/main\/java&lt;com.teracode.prototipogwt.domain.domainmodel{Permission.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="RolePermission">
+          <superclass class="com.teracode.prototipogwt.domain.domainmodel.EntityBase"/>
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <variables>
+            <variable name="role">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.Role"/>
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.Role" name="rolePermission"/>
+            </variable>
+            <variable name="permission">
+              <type class="com.teracode.prototipogwt.domain.domainmodel.Permission"/>
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <inverse class="com.teracode.prototipogwt.domain.domainmodel.Permission" name="rolePermission"/>
+            </variable>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>1602713958</value>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>RolePermission</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>RolePermission.java</name>
+            <compilationUnitId>=prototipogwt-domain/src\/main\/java&lt;com.teracode.prototipogwt.domain.domainmodel{RolePermission.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+      </classes>
+      <diagrams>
+        <classDiagram name="domainmodel">
+          <showAttributes>true</showAttributes>
+          <showOperations>true</showOperations>
+          <tagSymbol id="1">
+            <x>419</x>
+            <y>214</y>
+            <connectedTo symbol="9"/>
+            <tag class="com.teracode.prototipogwt.domain.domainmodel.Role" variable="user" id="@javax.xml.bind.annotation.XmlTransient"/>
+            <showNotSet>true</showNotSet>
+          </tagSymbol>
+          <classSymbol id="2">
+            <x>590</x>
+            <y>371</y>
+            <class class="com.teracode.prototipogwt.domain.domainmodel.EntityBase"/>
+            <attributes autoDisplay="293" accessVisible="true">
+              <attribute>active</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <classSymbol id="3">
+            <x>556</x>
+            <y>235</y>
+            <class class="com.teracode.prototipogwt.domain.domainmodel.RolePermission"/>
+            <attributes autoDisplay="289" accessVisible="true"/>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <classSymbol id="4">
+            <x>874</x>
+            <y>63</y>
+            <class class="com.teracode.prototipogwt.domain.domainmodel.EntityBase"/>
+            <attributes autoDisplay="293" accessVisible="true">
+              <attribute>active</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <classSymbol id="5">
+            <x>880</x>
+            <y>214</y>
+            <class class="com.teracode.prototipogwt.domain.domainmodel.Permission"/>
+            <attributes autoDisplay="289" accessVisible="true">
+              <attribute>clazz</attribute>
+              <attribute>method</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <classSymbol id="6">
+            <x>124</x>
+            <y>266</y>
+            <class class="com.teracode.prototipogwt.domain.domainmodel.UserSession"/>
+            <attributes autoDisplay="289" accessVisible="true">
+              <attribute>device</attribute>
+              <attribute>token</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <classSymbol id="7">
+            <x>563</x>
+            <y>91</y>
+            <class class="com.teracode.prototipogwt.domain.domainmodel.Role"/>
+            <attributes autoDisplay="289" accessVisible="true">
+              <attribute>name</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <classSymbol id="8">
+            <x>269</x>
+            <y>84</y>
+            <class class="com.teracode.prototipogwt.domain.domainmodel.User"/>
+            <attributes autoDisplay="289" accessVisible="true">
+              <attribute>email</attribute>
+              <attribute>password</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <association id="9">
+            <x>345</x>
+            <y>110</y>
+            <assocEnd-0 class="com.teracode.prototipogwt.domain.domainmodel.Role" name="user"/>
+            <assocEnd-1 class="com.teracode.prototipogwt.domain.domainmodel.User" name="role"/>
+            <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="8"/>
+              <connectY symbol="8"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.7368421</atX>
+              <atY>0.33333334</atY>
+            </point>
+            <point>
+              <connectX symbol="7"/>
+              <connectY symbol="7"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.5473684</atX>
+              <atY>0.47058824</atY>
+            </point>
+            <end-1>
+              <x>373</x>
+              <y>119</y>
+              <w>30</w>
+              <h>34</h>
+              <connectedSymbol symbol="8"/>
+              <text>+user</text>
+              <text>*</text>
+            </end-1>
+            <end-2>
+              <x>563</x>
+              <y>119</y>
+              <w>28</w>
+              <h>34</h>
+              <connectedSymbol symbol="7"/>
+              <text>+role</text>
+              <text>1</text>
+            </end-2>
+            <style>RECTANGULAR</style>
+          </association>
+          <association id="10">
+            <x>279</x>
+            <y>124</y>
+            <assocEnd-0 class="com.teracode.prototipogwt.domain.domainmodel.UserSession" name="user"/>
+            <assocEnd-1 class="com.teracode.prototipogwt.domain.domainmodel.User" name="userSession"/>
+            <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="8"/>
+              <connectY symbol="8"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.09615385</atX>
+              <atY>0.51282054</atY>
+            </point>
+            <point>
+              <connectX symbol="6"/>
+              <connectY symbol="6"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.70526314</atX>
+              <atY>0.37254903</atY>
+            </point>
+            <end-1>
+              <x>269</x>
+              <y>124</y>
+              <w>30</w>
+              <h>34</h>
+              <connectedSymbol symbol="8"/>
+              <text>+user</text>
+              <text>1</text>
+            </end-1>
+            <end-2>
+              <x>191</x>
+              <y>266</y>
+              <w>69</w>
+              <h>34</h>
+              <connectedSymbol symbol="6"/>
+              <text>+userSession</text>
+              <text>*</text>
+            </end-2>
+            <style>RECTANGULAR</style>
+          </association>
+          <generalization id="11">
+            <x>935</x>
+            <y>249</y>
+            <point>
+              <connectX symbol="5"/>
+              <connectY symbol="5"/>
+              <x>7</x>
+              <y>-3</y>
+              <atX>0.5</atX>
+              <atY>0.4888889</atY>
+            </point>
+            <point>
+              <connectX symbol="4"/>
+              <connectY symbol="4"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.5686275</atX>
+              <atY>0.7592593</atY>
+            </point>
+            <end-1>
+              <x>935</x>
+              <y>214</y>
+              <connectedSymbol symbol="5"/>
+            </end-1>
+            <end-2>
+              <x>935</x>
+              <y>124</y>
+              <connectedSymbol symbol="4"/>
+              <symbolType>1</symbolType>
+              <symbolLength>12</symbolLength>
+            </end-2>
+            <style>STRAIGHT</style>
+          </generalization>
+          <association id="12">
+            <x>607</x>
+            <y>127</y>
+            <assocEnd-0 class="com.teracode.prototipogwt.domain.domainmodel.RolePermission" name="role"/>
+            <assocEnd-1 class="com.teracode.prototipogwt.domain.domainmodel.Role" name="rolePermission"/>
+            <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="7"/>
+              <connectY symbol="7"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.4673913</atX>
+              <atY>0.6</atY>
+            </point>
+            <point>
+              <connectX symbol="3"/>
+              <connectY symbol="3"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.4848485</atX>
+              <atY>0.06666667</atY>
+            </point>
+            <end-1>
+              <x>603</x>
+              <y>152</y>
+              <w>28</w>
+              <h>34</h>
+              <connectedSymbol symbol="7"/>
+              <text>+role</text>
+              <text>1</text>
+            </end-1>
+            <end-2>
+              <x>603</x>
+              <y>235</y>
+              <w>86</w>
+              <h>34</h>
+              <connectedSymbol symbol="3"/>
+              <text>+rolePermission</text>
+              <text>*</text>
+            </end-2>
+            <style>RECTANGULAR</style>
+          </association>
+          <association id="13">
+            <x>935</x>
+            <y>243</y>
+            <assocEnd-0 class="com.teracode.prototipogwt.domain.domainmodel.RolePermission" name="permission"/>
+            <assocEnd-1 class="com.teracode.prototipogwt.domain.domainmodel.Permission" name="rolePermission"/>
+            <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="5"/>
+              <connectY symbol="5"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.57608694</atX>
+              <atY>0.37777779</atY>
+            </point>
+            <point>
+              <connectX symbol="3"/>
+              <connectY symbol="3"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.7373737</atX>
+              <atY>0.43333334</atY>
+            </point>
+            <end-1>
+              <x>880</x>
+              <y>257</y>
+              <w>66</w>
+              <h>34</h>
+              <connectedSymbol symbol="5"/>
+              <text>+permission</text>
+              <text>1</text>
+            </end-1>
+            <end-2>
+              <x>653</x>
+              <y>257</y>
+              <w>86</w>
+              <h>34</h>
+              <connectedSymbol symbol="3"/>
+              <text>+rolePermission</text>
+              <text>*</text>
+            </end-2>
+            <style>RECTANGULAR</style>
+          </association>
+          <width>1400</width>
+          <height>1000</height>
+          <lineStyle>RECTANGULAR</lineStyle>
+        </classDiagram>
+      </diagrams>
+      <rootName>src/main/java</rootName>
+    </javaPackage>
+  </packages>
+  <basicTypes>
+    <basicType>void</basicType>
+    <basicType>int</basicType>
+  </basicTypes>
+  <codeGenerators>
+    <Java-Bean>
+      <generate-property-support>false</generate-property-support>
+    </Java-Bean>
+    <Unit-Test>
+      <src-dir>(default)</src-dir>
+      <add-junit3-libraries>false</add-junit3-libraries>
+    </Unit-Test>
+    <Persistent>
+      <create-hibernate-cfg-xml>false</create-hibernate-cfg-xml>
+      <add-hsqldb-libraries>false</add-hsqldb-libraries>
+      <platform>Java Persistence API</platform>
+      <create-persistence-xml>false</create-persistence-xml>
+      <src-dir>(default)</src-dir>
+      <create-helper-main>false</create-helper-main>
+      <annotate-getters>false</annotate-getters>
+      <generate-dto-associations-many>false</generate-dto-associations-many>
+      <generate-collections-as-set>true</generate-collections-as-set>
+      <generate-full-classnames>true</generate-full-classnames>
+      <add-hibernate3-libraries>false</add-hibernate3-libraries>
+      <generate-dto>false</generate-dto>
+      <generate-interfaces>false</generate-interfaces>
+    </Persistent>
+    <DAO>
+      <src-dir>(default)</src-dir>
+      <generate-interfaces>false</generate-interfaces>
+      <use-spring-templates>false</use-spring-templates>
+    </DAO>
+    <GWT-Service>
+      <version>1.5</version>
+    </GWT-Service>
+  </codeGenerators>
+  <properties>
+    <conf-dir>(default)</conf-dir>
+    <root-package></root-package>
+    <create-hibernate-properties>false</create-hibernate-properties>
+    <create-log4j-properties>false</create-log4j-properties>
+  </properties>
+  <codeGeneration>
+    <generate-equals-and-hashcode>false</generate-equals-and-hashcode>
+    <source-compatibility>5.0</source-compatibility>
+    <grammar>None</grammar>
+  </codeGeneration>
+  <diagramProperties>
+    <link-with-java-editor>false</link-with-java-editor>
+  </diagramProperties>
+</project>

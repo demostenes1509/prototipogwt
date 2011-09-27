@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+      
+      <persistence-unit name="testdb" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+
+			<property name="hibernate.connection.provider_class" value="com.teracode.prototipogwt.backend.extras.config.DBCPConnectionProvider" />
+			<property name="hibernate.dbcp.maxActive" value="100" />
+			<property name="hibernate.dbcp.maxIdle" value="10" />
+			<property name="hibernate.dbcp.maxWait" value="10000" />
+			<property name="hibernate.dbcp.testOnBorrow" value="true" />
+			<property name="hibernate.dbcp.validationQuery" value="select 1" />
+		
+			<property name="hibernate.connection.url" value="${pro_gwt_test_connection_url}"/>
+			<property name="hibernate.dialect" value="${pro_gwt_test_hib_dialect}"/>
+			<property name="hibernate.connection.driver_class" value="${pro_gwt_test_jdbc_driver}"/>
+			<property name="hibernate.connection.username" value="${pro_gwt_test_username}"/>
+			<property name="hibernate.connection.password" value="${pro_gwt_test_password}"/>
+			<property name="hibernate.show_sql" value="true"/> 
+			<property name="hibernate.hbm2ddl.auto" value="${pro_gwt_test_hbm2ddl}"/>
+			<property name="hibernate.connection.autocommit" value="false"/>
+			<property name="hibernate.ejb.naming_strategy" value="com.teracode.prototipogwt.backend.extras.config.NamingStrategy"/>
+		</properties>
+	</persistence-unit>
+            
+</persistence>

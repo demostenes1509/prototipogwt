@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+   <source path="domainmodel"/>
+   <source path="dto"/>
+   <source path="usecasesdto"/>
+   <source path="responses"/>
+   <source path="util"/>
+</module>

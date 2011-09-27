@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.teracode</groupId>
+	<artifactId>prototipogwt</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Prototipo GWT Parent</name>
+
+	<parent>
+		<groupId>com.teracode</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.2</version>
+	</parent>
+
+	<properties>
+		<!-- Encoding -->
+		<project.build.sourceEncoding>cp1252</project.build.sourceEncoding>
+		<jdk.version>1.6</jdk.version>
+
+		<!-- Dependencies -->
+		<!-- Jars -->
+		<gwt.version>2.2.0</gwt.version>
+		<log4j.version>1.2.15</log4j.version>
+		<testng.version>5.6</testng.version>
+		<hibernate.version>3.6.6.Final</hibernate.version>
+		<hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
+		<resteasy.version>2.2.1.GA</resteasy.version>
+		<jaxb.version>2.2.3</jaxb.version>
+		<slf4j.version>1.6.1</slf4j.version>
+
+		<!-- Plugins -->
+		<maven-compiler-plugin.version>2.0.2</maven-compiler-plugin.version>
+		<maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version>
+		<maven-war-plugin.version>2.1.1</maven-war-plugin.version>
+		<tomcat-maven-plugin.version>1.1</tomcat-maven-plugin.version>
+		<cobertura-maven-plugin.version>2.4</cobertura-maven-plugin.version>
+		<maven-site-plugin.version>3.0</maven-site-plugin.version>
+		<maven-surefire-report-plugin.version>2.9</maven-surefire-report-plugin.version>
+		<maven-project-info-reports-plugin.version>2.4</maven-project-info-reports-plugin.version>
+		 
+		 <!-- Variables -->
+		<pro_gwt_username>sa</pro_gwt_username>
+		<pro_gwt_password></pro_gwt_password>
+		<pro_gwt_connection_url>jdbc:h2:mem:citi;DB_CLOSE_DELAY=-1</pro_gwt_connection_url>
+		<pro_gwt_hib_dialect>org.hibernate.dialect.H2Dialect</pro_gwt_hib_dialect>
+		<pro_gwt_jdbc_driver>org.h2.Driver</pro_gwt_jdbc_driver>
+		<pro_gwt_hbm2ddl>create-drop</pro_gwt_hbm2ddl>
+		
+		<pro_gwt_test_username>sa</pro_gwt_test_username>
+		<pro_gwt_test_password></pro_gwt_test_password>
+		<pro_gwt_test_connection_url>jdbc:h2:mem:citi;DB_CLOSE_DELAY=-1</pro_gwt_test_connection_url>
+		<pro_gwt_test_hib_dialect>org.hibernate.dialect.H2Dialect</pro_gwt_test_hib_dialect>
+		<pro_gwt_test_jdbc_driver>org.h2.Driver</pro_gwt_test_jdbc_driver>
+		<pro_gwt_test_hbm2ddl>create-drop</pro_gwt_test_hbm2ddl>		
+		
+<!-- 		<pro_gwt_test_username>root</pro_gwt_test_username> -->
+<!-- 		<pro_gwt_test_password></pro_gwt_test_password> -->
+<!-- 		<pro_gwt_test_connection_url>jdbc:mysql://localhost/citi</pro_gwt_test_connection_url> -->
+<!-- 		<pro_gwt_test_hib_dialect>org.hibernate.dialect.MySQL5InnoDBDialect</pro_gwt_test_hib_dialect> -->
+<!-- 		<pro_gwt_test_jdbc_driver>com.mysql.jdbc.Driver</pro_gwt_test_jdbc_driver> -->
+<!-- 		<pro_gwt_test_hbm2ddl>create-drop</pro_gwt_test_hbm2ddl>		 -->
+
+
+			<pro_gwt_backend_context>prototipogwt-backend</pro_gwt_backend_context>
+			<pro_gwt_jetty_server>prototipogwt.teracode.com</pro_gwt_jetty_server>
+			<pro_gwt_jetty_http_port>8080</pro_gwt_jetty_http_port>
+			<pro_gwt_jetty_https_port>8443</pro_gwt_jetty_https_port>
+			
+			<pro_gwt_rest_server>prototipogwt.teracode.com</pro_gwt_rest_server>
+			<pro_gwt_rest_http_port>8080</pro_gwt_rest_http_port>
+			<pro_gwt_rest_https_port>8443</pro_gwt_rest_https_port>
+			
+			<pro_gwt_web_server>prototipogwt.teracode.com</pro_gwt_web_server>
+			<pro_gwt_web_http_port>80</pro_gwt_web_http_port>
+			<pro_gwt_web_https_port>443</pro_gwt_web_https_port>
+
+	</properties>
+
+	<developers>
+		<developer>
+			<id>mcarrizo</id>
+			<name>Maximiliano Carrizo</name>
+			<email>maximiliano.carrizo@teracode.com</email>
+			<organization>Teracode B.A. S.A.</organization>
+			<organizationUrl>www.teracode.com.ar</organizationUrl>
+		</developer>
+	</developers>
+
+	<build>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+	
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${maven-eclipse-plugin.version}</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${maven-site-plugin.version}</version>
+				<configuration>
+				<reportPlugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-project-info-reports-plugin</artifactId>
+						<version>2.4</version>
+						<configuration>
+							<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+							<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+						</configuration>
+						<!-- simpler configuration without reportSets available for usual cases -->
+						<reports>
+							<report>dependencies</report>
+							<report>scm</report>
+						</reports>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>${cobertura-maven-plugin.version}</version>
+					</plugin>
+					
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-report-plugin</artifactId>
+						<version>${maven-surefire-report-plugin.version}</version>
+					</plugin>						
+					
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-project-info-reports-plugin</artifactId>
+						<version>${maven-project-info-reports-plugin.version}</version>
+					</plugin>					
+					
+				</reportPlugins>
+			</configuration>
+			</plugin>			
+		</plugins>
+		
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${maven-site-plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>		
+		
+	</build>
+
+	<dependencies>
+	
+		<!-- GWT dependencies (from central repo) -->
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>${gwt.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<!-- testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>teracode-repo</id>
+			<url>http://artifactory.teracode.com/artifactory/repo</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
+
+
+	<modules>
+		<module>prototipogwt-domain</module>
+		<module>prototipogwt-backend</module>
+		<module>prototipogwt-frontend</module>
+	</modules>
+
+	<distributionManagement>
+		<site>
+			<id>prototipogwt</id>
+			<url>file:///var/www/build/prototipogwt</url>
+		</site>
+	</distributionManagement>
+</project>

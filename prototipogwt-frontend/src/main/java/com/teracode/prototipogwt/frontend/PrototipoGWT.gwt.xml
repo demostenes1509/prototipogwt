@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='prototipogwt'>
+	<!-- Inherit the core Web Toolkit stuff.                        -->
+	<inherits name='com.google.gwt.user.User' />
+	
+	<!-- Citi Beneficios Domain -->
+	<inherits name='com.teracode.prototipogwt.domain.PrototipoGWTDomain' />
+	
+	<!-- Google GIN injector -->
+	<inherits name="com.google.gwt.inject.Inject"/>
+	
+	<!-- Google Dispatcher -->
+	<inherits name='net.customware.gwt.dispatch.Dispatch' />
+	
+	<!-- Presenter -->
+	<inherits name='net.customware.gwt.presenter.Presenter' />
+	
+	<!-- GQuery -->
+	<inherits name='com.google.gwt.query.Query'/>
+	
+	<!-- Resty GWT -->
+	<inherits name='org.fusesource.restygwt.RestyGWT' />
+	
+	<!-- JUnit -->
+	<inherits name="com.google.gwt.junit.JUnit"/>
+	
+	<!-- Google HTTP for encoding -->
+	<inherits name="com.google.gwt.http.HTTP"/> 
+	
+	<!-- Client Bundle  -->
+	<inherits name="com.google.gwt.resources.Resources" />
+
+	<!-- Validations -->	
+	<inherits name='com.em.validation.Validation' />
+	<inherits name='com.google.gwt.editor.Editor' />
+	<inherits name='com.google.gwt.uibinder.UiBinder' />
+	
+	
+	<!-- Inherit the default GWT style sheet.  You can change       -->
+	<!-- the theme of your GWT application by uncommenting          -->
+	<!-- any one of the following lines.                            -->
+<!--	<inherits name='com.google.gwt.user.theme.standard.Standard' />-->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+ 	
+	<!-- Specify the app entry point class.                         -->
+	<entry-point class='com.teracode.prototipogwt.frontend.client.PrototipoGWT' />
+	
+  <!-- English language, independent of country -->
+  <extend-property name="locale" values="en"/>
+
+  <!-- Spanish language, independent of country -->
+  <extend-property name="locale" values="es"/>
+
+  <!-- Default language (English) -->
+  <set-property-fallback name="locale" value="en"/>
+	
+
+	<!-- Specify the paths for translatable code                    -->
+	<source path='client' />
+	<source path='shared' />
+	
+	<servlet path='/rest/*' class='com.teracode.prototipogwt.frontend.server.redirector.ServletRedirector' />
+
+</module>

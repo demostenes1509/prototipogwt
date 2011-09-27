@@ -1,0 +1,35 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+	<g:HTMLPanel>
+		<div class="wrapper login">
+			<div class="content">
+				<div class="loginBox">
+					<h1>Welcome</h1>
+					<div id="globalMessages"></div>
+<!-- 					<form> -->
+						<div class="formField">
+							<label for="email">Email</label>
+<!-- 							<input type="text" name="email" class="textField" ui:field="email"/> -->
+							<g:TextBox ui:field="email" name="email"/>
+							<span id="emailError"></span>
+						</div>
+						<div class="formField">
+							<label for="password">Password</label>
+							<g:PasswordTextBox ui:field="password" name="password"/>
+							<span id="passwordError"></span>
+<!-- 							<input type="password" name="password" class="textField" ui:field="password"/> -->
+						</div>
+						<div class="forgotYourPassword">
+							<a href="#">Forgot your password?</a>
+						</div>
+						<div class="formButtons">
+							<input type="submit" value="login" class="button" ui:field="submitField" name="email"/>
+						</div>
+<!-- 					</form> -->
+				</div>
+			</div>
+		</div>
+	
+	</g:HTMLPanel>		
+</ui:UiBinder>

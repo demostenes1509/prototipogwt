@@ -1,0 +1,31 @@
+
+1) Ver el cycle detected del Entity Base.
+2) Revisar la secuencia del Entity Base.
+
+Pendientes Generales
+
+1) El proyecto GWT va a estar en el mismo proyecto que el backend ( ya probamos holgadamente que separados funcionan ). DONE !
+2) La manera de templetizar pantallas será por composicion de componentes, como JSF y Facelets
+3) No usaremos más los widgets provistos por GWT, sino sólo gquery.
+4) Seguiremos usando el EventBus.  DONE !
+5) Pediremos diseño sin id’s en los tags html.
+6) El css debería ser actualizado sólo por el diseñador gráfico.
+7) Utilizar JPA 2 DONE !
+8) Internacionalizacion 
+9) Validación por annotations del dominio  DONE !
+10) GWT.isClient()
+11) Un CSS General y uno por pagina.
+12) Jerarquia de Eventos para las operaciones mas simples  DONE !
+13) Usar templates para los DTO's de comunicacion que wrapean objetos.  DONE !
+14) Cambiar manejo de Eventos ( copiar AMS )  DONE !
+15) Ver si se puede volar el UserSet y RoleSet DONE !
+16) Super 2378 2-b.
+
+Pendientes 
+
+1) Integracion Spring / Validacion JPA
+3) Sacar clase de Sun ContextFactory DONE !!
+
+Luis---
+3) Dise�o Login content
+2) Tests de GWT. Buscar mejor opcion

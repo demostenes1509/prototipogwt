@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>Prototipo GWT Backend</display-name>
+    
+    <!--                -->
+    <!-- Context Params -->
+    <!--                -->
+    <!-- Spring Param -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:/META-INF/applicationContext.xml
+		</param-value>
+	</context-param>
+	
+	<!-- RESTeasy URL-based negotiation -->
+	<!-- Allows to provide json or xml via file names sufix -->
+	<context-param>
+		<param-name>resteasy.media.type.mappings</param-name>
+		<param-value>json : application/json, xml : application/xml</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>resteasy.providers</param-name>
+		<param-value>
+			com.teracode.prototipogwt.backend.extras.extensions.MethodInterceptor, 
+			com.teracode.prototipogwt.backend.extras.extensions.ContentTypeInterceptor,
+			com.teracode.prototipogwt.backend.extras.extensions.JAXBContextResolver, 
+			com.teracode.prototipogwt.backend.extras.extensions.JacksonContextResolver
+		</param-value>
+	</context-param>
+	
+    <!--           -->
+    <!-- Listeners -->
+    <!--           -->
+    <!--  Spring Listeners -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
+	</listener>
+	
+    <!--           -->
+    <!-- Servlets  -->
+    <!--           -->
+    <servlet>
+        <servlet-name>Resteasy</servlet-name>
+        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+    </servlet>
+
+    <!--                   -->
+    <!-- Servlet Mappings  -->
+    <!--                   -->
+    <servlet-mapping>
+        <servlet-name>Resteasy</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    
+    <!--                  -->
+    <!-- SSL              -->
+    <!--                  -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>secure</web-resource-name>
+			<url-pattern>/login/*</url-pattern>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+	</security-constraint>    
+
+</web-app>
